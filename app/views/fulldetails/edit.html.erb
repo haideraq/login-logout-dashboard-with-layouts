@@ -1,0 +1,72 @@
+<div class="container" >
+  <div class="home-content">
+    <form action="/fulldetails/<%= @full.id %>" method="post" name="form">
+
+      <div class="form-group">
+        <label for="name">Name :  <label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" value=" <%= @full.name %>"   name="name">
+         </div>
+
+         <div class="form-group">
+          <label for="contact">Contact :   <label>
+          <input type="integer" class="form-control" id="contact" placeholder="Enter phone" value=" <%= @full.contact %>" name="contact">
+        </div>
+        
+          </div>
+         <div class="form-group">
+          <label for="dob">DOB :   <label>
+          <input type="date" class="form-control" id="dob" value=" <%= @full.dob %>" placeholder="Enter dob" name="dob">
+        </div>
+
+          
+        <div class="form-group">
+          <label for="address">Address :  <label>
+          <input type="text" class="form-control" id="address" value=" <%= @full.address %>" placeholder="Enter address" name="address">
+        </div>
+        <div>
+          <label for="Country">Country:</label>
+          <select name="country"  id="Country">
+          <option value="">select</option>
+          <% ["Dubai", "USA", "India", "China"].each do |country| %>
+            <option value="<%= country %>" <%= "selected" if @full.country == country %>><%= country %></option>
+          <% end %>
+      </select>
+    </div><br>
+
+    <div class="form-group">
+      <label for="value">Gender :  <label>
+      <% ["Male", "Female"].each do |gender| %>
+       <input type="radio" id="<%= gender %>" name="gender" value="<%= gender %>"
+              <%= "checked" if @full.gender == gender %>>
+        <label for="<%= gender %>"><%= gender %></label>
+      <% end %>
+    </div>
+
+
+    <div class="form-group">
+      <label for="value">Relationship :  <label>
+      <% ["Single", "Married","Divorced"].each do |relationship| %>
+      <input type="radio" id="<%= relationship %>" name="relationship" value="<%= relationship %>"
+      <%= "checked" if @full.relationship == relationship %>>
+      <label for="<%= relationship %>"><%= relationship %></label>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <p>Hobbies : </p>
+    <% ["Cricket", "Singing","Dancing","Reading"].each do |hobbies| %>
+      <input type="checkbox" id="<%= hobbies %>" name="hobbies" value="<%= hobbies %>"
+      <%= "checked" if @full.hobbies == hobbies %>>
+      <label for="<%= hobbies %>"><%= hobbies %></label>
+      <% end %>
+    </div>
+    
+
+
+
+    <button type="reset" style="background-color: blue; float: right;">Clear</button>
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  </div>
+</div>

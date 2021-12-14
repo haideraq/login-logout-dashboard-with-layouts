@@ -1,0 +1,66 @@
+<h1 align="center">Full details of an User</h1>
+<body style="background-color:powderblue;">
+  <a href="/users/index">Back</a>
+<br><br>
+
+<br>
+<style>
+
+table{
+  width: 85%;
+
+}
+table, th, td {
+  
+  border: 1px solid black;
+  border-collapse: collapse;
+
+</style>
+</head>
+
+<br>
+<table align="center">
+  <tr>
+
+    <th>ID</th>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>DOB</th>
+    <th>Address</th>
+    <th>Country</th>
+    <th>Gender</th>
+    <th>Relationship</th>
+    <th>Hobbies</th> 
+    <th>Edit</th> 
+    
+    </tr>
+ 
+ <% @full.each do |full| %>
+   
+  <tr> 
+    
+    <td> <%= full.id %></td>
+    <td> <%= full.name  %></td>
+    <td> <%= full.contact %></td>
+   <td> <%= full.dob %></td>
+    <td> <%= full.address %></td>
+    <td> <%= full.country %></td>
+    <td> <%= full.gender %></td>
+    <td> <%= full.relationship %></td>
+    <td> <%= full.hobbies %></td>
+   
+    <td><a href="/fulldetails/<%= full.id %>/edit" >Edit</td>
+
+
+    
+
+  
+  
+<% end %>
+
+
+
+</tr>
+
+</table>
+</body>

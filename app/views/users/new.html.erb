@@ -1,0 +1,22 @@
+<br><br>
+     <html>
+     <body>
+     <a href="/" >Back</a>
+     <h1 align="center">SignUp Form</h1><br>
+     <form action="/users" method="post" name="form" class="" style="width: 800px; margin: auto;">
+     <div class="container">
+     <% flash.each do |type, msg| %>
+     <div class=" alert alert-success text-dark">
+     <%= msg %>
+     </div>
+     <% end %>
+     <label ><b>Email</b></label>
+     <input type="text" placeholder="Enter Email" name="email" required>
+     <label ><b>Password</b></label>
+     <input type="password" placeholder="Enter Password" name="password" required>
+     <button type="submit">SignUp</button>
+     <button type="reset" style="background-color: red; float: right;">Clear</button>
+     </div>
+     </form>
+     </body>
+     </html>
